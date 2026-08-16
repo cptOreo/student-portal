@@ -12,6 +12,9 @@ defmodule Profile do
   def update_email(%Profile{} = profile, new_email) do
     %Profile{profile | email: new_email}
   end
-
+  
+  def valid_email?(email) do
+    String.contains?(email, "@") and String.contains?(email, ".")
+  end
 end
 
