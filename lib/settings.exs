@@ -24,3 +24,15 @@ defmodule Settings do
   end
 
 end
+
+settings = Settings.new()
+settings = Settings.toggle_notifications(settings)
+settings = Settings.set_theme(settings, "dark")
+
+case Settings.set_language(settings, "es") do
+  {:ok, updated_settings} ->
+    IO.puts("Theme: #{updated_settings.theme}, Notifications: #{updated_settings.notifications}, Language: #{updated_settings.language}")
+  {:error, reason} ->
+    IO.puts("Error: #{reason}")
+end
+
