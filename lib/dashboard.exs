@@ -25,6 +25,11 @@ defmodule Dashboard do
   def course_count(%Dashboard{} = dashboard) do
     length(dashboard.courses)
   end
+
+  def upcoming_courses(dashboard, limit) do
+    Enum.take(dashboard.courses, limit)
+  end
+
 end
 
 dash = Dashboard.new("Rav")
