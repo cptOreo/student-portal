@@ -19,3 +19,11 @@ defmodule Dashboard do
 
 end
 
+dash = Dashboard.new("Rav")
+dash = Dashboard.add_course(dash, "Design Thinking")
+dash = Dashboard.add_course(dash, "Data Structures")
+dash = Dashboard.post_announcement(dash, "Welcome to the new semester!")
+
+IO.puts ("Courses: #{Enum.join(dash.courses, ", ")}")
+IO.puts ("Announcements: #{Enum.join(dash.announcements, ", ")}")
+
