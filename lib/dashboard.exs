@@ -29,6 +29,10 @@ defmodule Dashboard do
   def course_names(dashboard) do
     dashboard.courses
   end
+  
+  def upcoming_courses(dashboard, limit) do
+    Enum.take(dashboard.courses, limit)
+  end
 
 end
 
