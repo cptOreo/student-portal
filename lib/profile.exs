@@ -18,3 +18,9 @@ defmodule Profile do
   end
 end
 
+profile = Profile.new("Rav", "rav@example.com", 2024)
+profile = Profile.update_bio(profile, "PDM Student")
+
+IO.puts("Name: #{profile.name}")
+IO.puts("Email: #{profile.email}")
+IO.puts("Email valid? #{Profile.valid_email?(profile.email)}")
