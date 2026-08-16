@@ -1,4 +1,9 @@
 defmodule Profile do
+
+  @moduledoc """
+  A module representing a user profile with fields for name, email, bio, and year.
+  """
+
   defstruct name: nil, email: nil, bio: "", year: nil
 
   def new(name, email, year) do
