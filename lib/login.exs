@@ -29,8 +29,12 @@ defmodule Login do
   end
 end
 
-
-  IO.inspect(Login.authenticate("rav", "password"))
-  IO.inspect(Login.authenticate("dhav", "wrongpassword"))
-
+attemps = %{}
+case Login.authenticate("rav", "wrongpass") do
+  {:ok, user} ->
+    IO.puts("Welcome , #{user}")
+  {:error, reason} ->
+    attemps = Login.track_attempt(attemps, "rav")
+    IO.puts("Login failed: #{reason}. Attempt count: #{Map.get(attemps, "rav")}")
+end
 
