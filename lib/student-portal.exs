@@ -34,6 +34,10 @@ defmodule StudentPortal do
       true -> "F"
     end
   end
+
+  def add_grades(student, grades) when grades >= 0 and grades <= 100 do
+    %{student | grades: [grades | student.grades]}
+  end
 end
 
 student = StudentPortal.new_student("Ravi", 4004)
