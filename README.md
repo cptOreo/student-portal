@@ -14,4 +14,9 @@ A lightweight student portal application built in Elixir.
 2. Move into the project folder 
    cd student-portal
    
+# Running the project 
+
+Run the main script with:
+    elixir main.exs
+
    
