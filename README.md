@@ -6,3 +6,12 @@ A lightweight student portal application built in Elixir.
 
 - Elixir 1.15 or later
 - Erlang/OTP 26 or later
+
+##Installation
+
+1. Clone the repository:
+   git clone https://github/cptOreo/student-portal.git
+2. Move into the project folder 
+   cd student-portal
+   
+   
