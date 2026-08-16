@@ -4,5 +4,14 @@ defmodule Settings do
   def new do
     %Settings{}
   end
+
+  def toggle_notifications(settings) do
+    %{settings | notifications: !settings.notifications}
+  end
+
+  def set_theme(settings, theme) when theme in ["light", "dark"] do
+    %{settings | theme: theme}
+  end
+
 end
 
