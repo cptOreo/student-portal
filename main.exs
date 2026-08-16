@@ -15,6 +15,13 @@ defmodule StudentPortal do
       grades -> Enum.sum(grades) / length(grades)
     end
   end
+  
+  def remove_last_grade(student) do
+    case student.grades do
+      [] -> student
+      [_head | tail] -> %{student | grades: tail}
+    end
+  end
 end
 
 student = StudentPortal.new_student("Ravi", 4004)
