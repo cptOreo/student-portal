@@ -1,4 +1,9 @@
 defmodule Settings do
+
+  @moduledoc """
+  manages user settings for an application, including notifications, theme, and language preferences.
+  """
+
   defstruct notifications: true, theme: "light", language: "en"
 
   def new do
