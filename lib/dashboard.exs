@@ -25,6 +25,11 @@ defmodule Dashboard do
   def course_count(%Dashboard{} = dashboard) do
     length(dashboard.courses)
   end
+
+  def course_names(dashboard) do
+    dashboard.courses
+  end
+
 end
 
 dash = Dashboard.new("Rav")
