@@ -18,8 +18,17 @@ defmodule Login do
       String.length(password) < 8 -> {:error, "Password must be at least 8 characters long"}
       true -> :ok
     end
-  end  
+  end
+  
+  def track_attempt(attempts_map, username) do
+    Map.update(attempts_map, username, 1, &(&1 + 1))
+  end
+
+  def locked_out?(attempts_map, username, max_attempts \\ 3) do
+    Map.get(attempts_map, username, 0) >= max_attempts
+  end
 end
+
 
   IO.inspect(Login.authenticate("rav", "password"))
   IO.inspect(Login.authenticate("dhav", "wrongpassword"))
