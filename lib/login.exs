@@ -11,7 +11,17 @@ defmodule Login do
       _ -> {:error, "Invalid password"}
     end
   end
+
+  def validate_credentials(username, password) do
+    cond do
+      String.length(username) < 3 -> {:error, "Username must be at least 3 characters long"}
+      String.length(password) < 8 -> {:error, "Password must be at least 8 characters long"}
+      true -> :ok
+    end
+  end  
 end
 
-IO.inspect(Login.authenticate("rav", "password"))
+  IO.inspect(Login.authenticate("rav", "password"))
+  IO.inspect(Login.authenticate("dhav", "wrongpassword"))
+
 
