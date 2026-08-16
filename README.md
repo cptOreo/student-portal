@@ -19,4 +19,10 @@ A lightweight student portal application built in Elixir.
 Run the main script with:
     elixir main.exs
 
+# Project Structure 
+
+student-portal/
+|--main.exs       #entry point
+|--README.md      #this file
+└── .gitignore
    
