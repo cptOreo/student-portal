@@ -1,4 +1,9 @@
 defmodule Dashboard do
+
+  @moduledoc """
+  A simple dashboard for students to manage their courses and announcements.
+  """
+
   defstruct students: nil, courses: [], announcements: []
 
   def new(students) do
