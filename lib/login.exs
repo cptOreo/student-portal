@@ -1,9 +1,15 @@
+
 defmodule Login do 
   @users %{
     "rav" => "password",
     "dhav" => "12345678"
   }
 
+  @moduledoc """
+  This module provides basic user authentication functionality.  Handles user authentication, credential validation, and failed-attempt
+  tracking for the Student Portal login feature.
+  """
+  
   def authenticate(username, password) do
     case Map.get(@users, username) do
       nil -> {:error, "User not found"}
