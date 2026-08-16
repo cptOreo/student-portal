@@ -28,6 +28,10 @@ defmodule Settings do
     end
   end
 
+  def reset_to_defaults(_settings) do
+    %Settings{}
+  end
+
 end
 
 settings = Settings.new()
@@ -39,5 +43,7 @@ case Settings.set_language(settings, "es") do
     IO.puts("Theme: #{updated_settings.theme}, Notifications: #{updated_settings.notifications}, Language: #{updated_settings.language}")
   {:error, reason} ->
     IO.puts("Error: #{reason}")
+
+
 end
 
