@@ -13,5 +13,9 @@ defmodule Dashboard do
     %Dashboard{dashboard | courses: List.delete(dashboard.courses, course)}
   end
 
+  def post_announcement(%Dashboard{} = dashboard, message) do
+    %Dashboard{dashboard | announcements: [message | dashboard.announcements]}
+  end
+
 end
 
