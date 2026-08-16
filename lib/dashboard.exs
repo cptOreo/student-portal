@@ -22,6 +22,9 @@ defmodule Dashboard do
     %Dashboard{dashboard | announcements: [message | dashboard.announcements]}
   end
 
+  def course_count(%Dashboard{} = dashboard) do
+    length(dashboard.courses)
+  end
 end
 
 dash = Dashboard.new("Rav")
